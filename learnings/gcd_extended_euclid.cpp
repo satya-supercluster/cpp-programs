@@ -1,13 +1,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-// int gcd(int a,int b){
-//     if(a<b) swap(a,b);
-//     if(b==0) return a;
-//     return gcd(b,a%b);
-// }
 vector<int> extended(int a,int b){
-    // if(a<b) swap(a,b);
     if(b==0){
         return {1,0,a};
     }
