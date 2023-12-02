@@ -55,8 +55,8 @@ mat power(mat m,int b){
     return res;
 }
 int fibo(int n){
-    if(n==1) return 0;
-    if(n==2) return 1;
+    if(n==0) return 0;
+    if(n==1) return 1;
     mat m;
     m.setfibo();
     m=power(m,n-1);
@@ -65,8 +65,8 @@ int fibo(int n){
 int main(){
     int n;
     cin>>n;
-    for(int i=1;i<=n;i++){
-        cout<<fibo((i>2)?i-1:i)<<" ";
+    for(int i=0;i<=n;i++){
+        cout<<fibo(i)<<" ";
     }
     return 0;
 }
