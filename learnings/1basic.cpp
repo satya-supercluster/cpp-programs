@@ -8,7 +8,7 @@ using namespace std;
 #define loop1(i,k)		for(ll i=1;i<=k;i++)
 #define inloop(x)       for(auto it : x)
 #define MOD				1000000007
-#define m_p				make_pair
+#define m_p				make_pairz
 #define ff				first
 #define ss				second
 #define pb				push_back

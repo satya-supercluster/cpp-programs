@@ -3,9 +3,6 @@ using namespace std;
 int main(){
     int n;
     cin>>n;
-
-
-    
     
     int a[n][n];
     for(int i=0; i<n; i++){
@@ -13,10 +10,6 @@ int main(){
             cin>>a[i][j];
         }
     }
-
-
-
-
 
     int pre[n][n];
     // for(int i=0; i<n; i++){
@@ -40,9 +33,6 @@ int main(){
 
 
 
-
-
-
     //pre[i][j]=pre[i][j-1]+pre[i-1][j]+a[i][j]-pre[i-1][j-1];
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
@@ -53,9 +43,6 @@ int main(){
         }
     }
     cout<<"--------------------------------"<<endl;
-
-
-
 
 
     for(int i=0; i<n; i++){
@@ -75,8 +62,6 @@ int main(){
     // 1 3 6 
     // 5 12 21 
     // 12 27 45 
-
-
 
 
     return 0;
