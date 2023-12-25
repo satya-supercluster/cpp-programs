@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.scss": "postcss",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ostream": "cpp"
     }
 }
