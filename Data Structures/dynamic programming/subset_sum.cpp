@@ -18,11 +18,9 @@ int main(){
         for(int j=1;j<=sum;j++){
             if(arr[i-1]<=j){
                 dp[i][j]=dp[i-1][j]||dp[i-1][j-arr[i-1]];
-                // cout<<i<<" "<<j<<endl;
             }
             else{
                 dp[i][j]=dp[i-1][j];
-                // cout<<"hello"<<endl;
             }
         }
     }
