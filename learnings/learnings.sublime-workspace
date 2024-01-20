@@ -1,0 +1,467 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cp",
+				"cpsimple\tcpsimple"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "i1.txt",
+			"settings":
+			{
+				"buffer_size": 87,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			},
+			"undo_stack":
+			[
+				[
+					4,
+					1,
+					"left_delete",
+					null,
+					"AQAAAFUAAAAAAAAAVQAAAAAAAAABAAAAMA",
+					"AQAAAAAAAAABAAAAVgAAAAAAAABWAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					5,
+					1,
+					"insert",
+					{
+						"characters": "0"
+					},
+					"AQAAAFUAAAAAAAAAVgAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAVQAAAAAAAABVAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "o1.txt",
+			"settings":
+			{
+				"buffer_size": 73,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			},
+			"undo_stack":
+			[
+				[
+					3,
+					1,
+					"left_delete",
+					null,
+					"AQAAACsAAAAAAAAAKwAAAAAAAAABAAAAIA",
+					"AQAAAAAAAAABAAAALAAAAAAAAAAsAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					""
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++11/C++11.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++11/C++11.sublime-build",
+				"Run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
+			],
+			[
+				"Package Control: dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: d",
+				"Package Control: Disable Package"
+			],
+			[
+				"Snippet: cp",
+				"Snippet: cpsimple"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"cp p",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: main()"
+			],
+			[
+				"contr",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Install Package Control"
+			],
+			[
+				"ui",
+				"UI: Select Color Scheme"
+			],
+			[
+				"",
+				"Build With: C++ Single File - Run"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 239.199996948,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/91790/OneDrive/Desktop/my files/Programming/cpp programs/cpp-programs/learnings"
+	],
+	"file_history":
+	[
+		"/C/Users/91790/OneDrive/Desktop/my files/Programming/cpp programs/cpp-programs/learnings/2n+2.cpp",
+		"/C/Users/91790/AppData/Roaming/Sublime Text/Packages/User/cpp.sublime-snippet",
+		"/C/Users/91790/AppData/Roaming/Sublime Text/Packages/User/chefcp.sublime-snippet",
+		"/C/Users/91790/AppData/Roaming/Sublime Text/Packages/User/cpsimple.sublime-snippet",
+		"/C/Users/91790/OneDrive/Desktop/my files/Programming/cpp programs/cpp-programs/o1.txt",
+		"/C/Users/91790/OneDrive/Desktop/my files/Programming/cpp programs/cpp-programs/i1.txt",
+		"/C/Users/91790/AppData/Roaming/Sublime Text/Packages/User/Package Control.sublime-settings",
+		"/C/Users/91790/OneDrive/Desktop/my files/Programming/cpp programs/cpp-programs/Data Structures/Segment Tree/implement.cpp",
+		"/C/Users/91790/OneDrive/Desktop/my files/Programming/cpp programs/cpp-programs/practice.cpp",
+		"/C/Users/91790/OneDrive/Desktop/my files/Programming/cpp programs/cpp-programs/Data Structures/Segment Tree/o1.txt",
+		"/C/Users/91790/OneDrive/Desktop/my files/Programming/cpp programs/cpp-programs/Data Structures/Segment Tree/i1.txt",
+		"/C/Users/91790/OneDrive/Desktop/my files/Programming/cpp programs/cpp-programs/output.txt",
+		"/C/Users/91790/OneDrive/Desktop/my files/Programming/cpp programs/cpp-programs/input.txt",
+		"/C/Users/91790/OneDrive/Desktop/my files/Programming/cpp programs/cpp-programs/Data Structures/Segment Tree/input.txt",
+		"/C/Users/91790/AppData/Roaming/Sublime Text/Packages/C++11/C++11.sublime-settings",
+		"/C/Users/91790/AppData/Roaming/Sublime Text/Packages/C++11/messages/install.txt",
+		"/C/Users/91790/AppData/Roaming/Sublime Text/Packages/User/power.sublime-snippet",
+		"/C/Users/91790/AppData/Roaming/Sublime Text/Packages/User/CPParser/Codeforces/One_X_1905E.cpp",
+		"/C/Users/91790/AppData/Roaming/Sublime Text/Packages/CPParser/README.md",
+		"/C/Users/91790/AppData/Roaming/Sublime Text/Packages/User/CPParser/Codechef/NPRPE.cpp",
+		"/C/Users/91790/AppData/Roaming/Sublime Text/Packages/User/gcd.sublime-snippet",
+		"/C/Users/91790/AppData/Roaming/Sublime Text/Packages/User/sieve.sublime-snippet",
+		"/C/Users/91790/AppData/Roaming/Sublime Text/Packages/User/1].sublime-snippet"
+	],
+	"find":
+	{
+		"height": 33.6
+	},
+	"find_in_files":
+	{
+		"height": 158.4,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "C:\\Users\\91790\\OneDrive\\Desktop\\my files\\Programming\\cpp programs\\cpp-programs\\learnings"
+		}
+	],
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "i1.txt",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 87,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32,
+								32
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "o1.txt",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 73,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15,
+								15
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 33.6
+	},
+	"input":
+	{
+		"height": 65.2
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				2,
+				0,
+				3,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.551845342707,
+			0.821909783245,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 65.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/C++/C++ Single File.sublime-build",
+	"project": "",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 59.2,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				2,
+				0,
+				3,
+				1
+			]
+		]
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 170.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 3
+	}
+}

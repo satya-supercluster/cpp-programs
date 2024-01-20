@@ -1,32 +1,20 @@
 #include<iostream>
-#include<bitset>
-#include<vector>
 using namespace std;
-// const int N=1e5+5;
-bool seive(int N){
-    vector<bool> v(N+1,true);
-    v[1]=false;
-
-    // bitset<N+1> v;
-    // v.set();
-    // v[1]=0;
-
-
-    for(int i=2;i<N+1;i++){
-        if(v[i]==true){
-            for(int j=i*i;j<N+1;j+=i){
-                v[j]=false;
+void seive(vector<bool>&v){
+    int N=v.size()-1;
+    v[0]=v[1]=true;
+    for(int i=2;i*i<=N;i++){
+        if(v[i]==false){
+            for(int j=i*i;j<=N;j+=i){
+                v[j]=true;
             }
         }
     }
-    for(int i=1;i<N+1;i++){
-        if(v[i]==true){
-            cout<<i<<" ";           //for printing prime
-        }
-    }
-    return v[N+1];      // for checking prime
 }
 int main(){
     int n; cin>>n;
-    seive(n);
+    vector<bool> v(n+1,false);
+    for(int i=0;i<=n;i++)if(!v[i])cout<<i<<" ";
+    cout<<endl;
+    return 0;
 }
