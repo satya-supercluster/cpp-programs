@@ -1,18 +1,18 @@
 #include <iostream>
 using namespace std;
-const int s = 2;
-int mod = 1e9 + 7;
+const long long s = 2;
+long long mod = 1e9 + 7;
 class mat
 {
 private:
-    int m[s][s] = {0};
+    long long m[s][s] = {0};
 
 public:
     void identity()
     {
-        for (int i = 0; i < s; i++)
+        for (long long i = 0; i < s; i++)
         {
-            for (int j = 0; j < s; j++)
+            for (long long j = 0; j < s; j++)
             {
                 if (i == j)
                     m[i][j] = 1;
@@ -29,11 +29,11 @@ public:
     mat operator*(mat x)
     {
         mat ans;
-        for (int i = 0; i < s; i++)
+        for (long long i = 0; i < s; i++)
         {
-            for (int j = 0; j < s; j++)
+            for (long long j = 0; j < s; j++)
             {
-                for (int k = 0; k < s; k++)
+                for (long long k = 0; k < s; k++)
                 {
                     ans.m[i][j] += m[i][k] * x.m[k][j];
                 }
@@ -43,22 +43,22 @@ public:
     }
     void display()
     {
-        for (int i = 0; i < s; i++)
+        for (long long i = 0; i < s; i++)
         {
-            for (int j = 0; j < s; j++)
+            for (long long j = 0; j < s; j++)
             {
                 cout << m[i][j] << " ";
             }
             cout << endl;
         }
     }
-    int answer()
+    long long answer()
     {
-        int ans = m[1][0] + m[1][1];
+        long long ans = m[1][0] + m[1][1];
         return ans;
     }
 };
-mat power(mat m, int b)
+mat power(mat m, long long b)
 {
     mat res;
     res.identity();
@@ -73,7 +73,7 @@ mat power(mat m, int b)
     }
     return res;
 }
-int fibo(int n)
+long long fibo(long long n)
 {
     if (n == 0)
         return 0;
@@ -84,20 +84,22 @@ int fibo(int n)
     m = power(m, n - 1);
     return m.answer();
 }
-int fib[(int)1e9+7];
 int main()
 {
-    int k;
+    long long k;
     cin >> k;
     while (k--)
     {
-        int n, m, ans = 0;
-        cin >> n >> m;
-        for (int i = n; i <= m; i++)
-        {
-            ans = (ans + fibo(i)) % mod;
-        }
-        cout << ans<<endl;
+        // long long n, m, ans = 0;
+        // cin >> n >> m;
+        // for (long long i = n; i <= m; i++)
+        // {
+        //     ans = (ans + fibo(i)) % mod;
+        // }
+        // cout << ans<<endl;
+        long long n;
+        cin>>n;
+        cout<<fibo(n);
     }
     return 0;
 }

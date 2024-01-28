@@ -2,24 +2,17 @@
 using namespace std;
 #define int long long int
 #define endl "\n"
-const int testcases=0;
+const int testcases=1;
 void solve(){
-    int n,k;
-    string s;
-    cin>>n>>k>>s;
-    string ans;
-    int t = (n - k) / 2;
-    for (auto c : s) {
-        if (c == '(') {
-            ans += c;
-        } else if (t) {
-            t--;
-            ans.pop_back();
-        } else {
-            ans += c;
-        }
+    int n;
+    cin>>n;
+    vector<int> v(n);
+    for(auto&i:v)cin>>i;
+    int c{};
+    for(int i{1};i<n;i++){
+        if(v[i]>v[i-1])c++;
     }
-    cout << ans << endl;
+    cout<<max(0ll,c-1)<<endl;
 }
 
 int32_t main(){

@@ -17,7 +17,6 @@ int main(){
             else dp[i][j]=dp[i-1][j];
         }
     }
-    // for(int i=0;i<=n;i++)count+=dp[i][req];
     cout<<dp[n][req]<<endl;
     return 0;
 }
