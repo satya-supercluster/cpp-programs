@@ -3,16 +3,34 @@ using namespace std;
 #define int long long int
 #define endl "\n"
 const int testcases=1;
+vector<int> helper(string s){
+    vector<int> v;
+    for(int i=0;i<s.length();i++){
+        while((!v.empty())&&(s[i]>s[v.back()])){
+            v.pop_back();
+        }
+        // cout<<"j"<<endl;
+        v.push_back(i);
+    }
+    return v;
+}
 void solve(){
     int n;
     cin>>n;
-    vector<int> v(n);
-    for(auto&i:v)cin>>i;
-    int c{};
-    for(int i{1};i<n;i++){
-        if(v[i]>v[i-1])c++;
+    string s;
+    cin>>s;
+    std::vector<int> v;
+    v=helper(s);
+    int ff=v[0],ex{};
+    for(int i=0;i<n;i++){
+        if(s[i]==s[ff])ex++;
     }
-    cout<<max(0ll,c-1)<<endl;
+    for(int i=0;i<v.size()/2;i++){
+        swap(s[v[i]],s[v[v.size()-i-1]]);
+    }
+    // cout<<s<<" "<<v.size()<<endl;
+    if(is_sorted(begin(s), end(s)))cout<<v.size()-ex<<endl;
+    else cout<<"-1"<<endl;
 }
 
 int32_t main(){
