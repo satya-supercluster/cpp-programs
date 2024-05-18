@@ -2,7 +2,8 @@
     "files.associations": {
         "*.scss": "postcss",
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "valarray": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabledIfIncludesResolve",
     "C_Cpp.default.compilerPath": "C:/msys64/mingw64/bin/g++.exe",
