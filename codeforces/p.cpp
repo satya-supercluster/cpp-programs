@@ -44,51 +44,38 @@ ostream &operator<<(ostream &out, vector<T> &a)
 #define LB(c, x) distance((c).begin(), lower_bound(all(c), (x)))
 #define UB(c, x) distance((c).begin(), upper_bound(all(c), (x)))
 #define UNIQUE(x) sort(all(x)), x.erase(unique(all(x)), x.end()), x.shrink_to_fit()
-vi v;
 
-void Merge(int s, int m, int e)
+void solver(ll z, ll k, ll x, ll y)
 {
-    vi t(v.size());
-    int i = s, j = m + 1, k{s};
-    while (i <= m && j <= e)
+    ll value =(ll) cbrt(k);
+    ll ans = 0ll;
+    for (ll a= 1ll; a <=(ll) sqrt(k); ++a)
     {
-        if (v[i] < v[j])
-        {
-            t[k++] = v[i++];
-        }
-        else
-        {
-            t[k++] = v[j++];
-        }
+        if (!(k % a))
+            for (ll b=1ll; b <= sqrt(k / a); ++b)
+                if (!((k*1ll / a*1ll) % b))
+                {
+                    if ((ll)k*1ll / (a *1ll* b) < 1ll+x and b < 1ll+y and a < 1ll+z)
+                        ans = max({ans, (y - b + 1)*(x - (ll)k*1ll / (a *1ll* b) + 1) *(z - a + 1)});
+                    if ((ll)k*1ll / (a *1ll* b) < 1ll+x and a < 1ll+y and b < 1ll+z)
+                        ans = max({ans, (y - a + 1) * (x - (ll)k*1ll / (a *1ll* b) + 1) * (z - b + 1)});
+                    if (a < 1ll+x and (ll)k*1ll / (a *1ll* b) < 1ll+y and b < 1ll+z)
+                        ans = max({ans, (y - (ll)k*1ll / (a *1ll* b) + 1) * (z - b + 1) * (x - a + 1)});
+                    if (b < 1ll+x and (ll)k*1ll / (a *1ll* b) < 1ll+y and a < 1ll+z)
+                        ans = max({ans, (x - b + 1) * (z - a + 1) * (y - (ll)k*1ll / (a *1ll* b) + 1)});
+                    if (b < 1ll+x and a < 1ll+y and (ll)k*1ll / (a *1ll* b) < 1ll+z)
+                        ans = max({ans, (x - b + 1) * (z - (ll)k*1ll / (a *1ll* b) + 1) * (y - a + 1)});
+                    if (a < 1ll+x and b < 1ll+y and (ll)k*1ll / (a *1ll* b) < 1ll+z)
+                        ans = max({ans, (y - b + 1) * (x - a + 1) * (z - (ll)k*1ll / (a *1ll* b) + 1)});
+            }
     }
-    while (i <= m)
-        t[k++] = v[i++];
-    while (j <= e)
-        t[k++] = v[j++];
-    for (int i = s; i <= e; i++)
-    {
-        v[i] = t[i];
-    }
-}
-
-void MergeSort(int low, int high)
-{
-    if (low < high)
-    {
-        int mid = low + (high - low) / 2;
-        MergeSort(low, mid);
-        MergeSort(mid + 1, high);
-        Merge(low, mid, high);
-    }
+    return void(cout << ans  << endl);
 }
 void Main()
 {
-    int n;
-    cin >> n;
-    v.resize(n);
-    cin >> v;
-    MergeSort(0, n - 1);
-    cout << v << endl;
+    ll x, y, z, k;
+    cin >> x >> y >> z >> k;
+    solver(z, k,x,y);
 }
 
 int32_t main()

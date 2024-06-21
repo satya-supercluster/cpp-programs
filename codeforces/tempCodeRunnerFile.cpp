@@ -1,1 +1,1 @@
-k = min(k, mid);
+cout << "-1"<<endl

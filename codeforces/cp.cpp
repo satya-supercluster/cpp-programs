@@ -7,90 +7,88 @@ using pi = pair<ll, ll>;
 using vi = vector<ll>;
 template <class T>
 using vc = vector<T>;
-ll query(ll l, ll r);
-vc<vi> computation(1000005, vi(20, 0));
-
-void orr(vi&v,ll&search,ll mid){
-    for (ll i = 0; i < mid; i++)
-        search |= v[i];
-}
-
-void all(ll mid,ll&p,ll&search,ll&n){
-    for (ll i = 1; i < n; i++)
-    {
-        ll first = i, last = i - 1ll + mid;
-        if (last > n - 1)
-            continue;
-        else
-        {
-            ll currsearch = query(first, last);
-            p = (currsearch != search) ? false : p;
-            if (currsearch == search)
-                continue;
-            else
-                break;
-        }
-    }
-}
-
-void solver( vi v,ll&k){
-    ll n = v.size();
-    ll l{1}, r = n;
-    while (l <= r)
-    {
-        ll p = 1;
-        ll search{};
-        ll mid = l + (r - l) / 2ll;
-        orr(v, search, mid);
-        // searching alll of them
-        all(mid, p, search, n);
-        if (p == 1ll)
-        {
-            r = mid;
-            r--;
-            if (mid < k)
-            {
-                k = mid;
-            }
-        }
-        else
-        {
-            l = mid;
-            l++;
-        }
-    }
-}
-
-ll query(ll l, ll r)
+template <class T>
+using vvc = vector<vc<T>>;
+template <class T>
+using pq = priority_queue<T>;
+template <class T>
+using pqg = priority_queue<T, vector<T>, greater<T>>;
+template <typename T>
+T floor(T a, T b) { return a / b - (a % b && (a ^ b) < 0); }
+template <typename T>
+T ceil(T x, T y) { return floor(x + y - 1, y); }
+template <typename T>
+istream &operator>>(istream &cin, vector<T> &a)
 {
-
-    ll or_of{0ll};
-    for (ll j = 20; j >= 0; j--)
-        if ((1ll << j) <= r - l + 1ll)
-            or_of |= computation[l][j],
-                l += 1ll << j;
-    return or_of;
+    for (T &x : a)
+        cin >> x;
+    return cin;
+}
+template <typename T>
+ostream &operator<<(ostream &out, vector<T> &a)
+{
+    for (T &x : a)
+        out << x << " ";
+    return out;
+}
+#define FOR_subset(t, s) for (ll t = (s); t >= 0; t = (t == 0 ? -1 : (t - 1) & (s)))
+#define all(x) begin(x), end(x)
+#define sz(x) ll(x.size())
+#define elif else if
+#define eb emplace_back
+#define mp make_pair
+#define ff first
+#define ss second
+#define MIN(v) *min_element(all(v))
+#define MAX(v) *max_element(all(v))
+#define LB(c, x) distance((c).begin(), lower_bound(all(c), (x)))
+#define UB(c, x) distance((c).begin(), upper_bound(all(c), (x)))
+#define UNIQUE(x) sort(all(x)), x.erase(unique(all(x)), x.end()), x.shrink_to_fit()
+ll m = (ll)1e9 + 7ll;
+ll fastexpo(ll a, ll b)
+{
+    a = (a + m) % m;
+    long long res = 1ll;
+    while (b)
+    {
+        if (b & 1ll)
+            res = (res * 1ll * a + m) % m;
+        b >>= 1ll;
+        a = (a * 1ll * a + m) % m;
+    }
+    return res;
 }
 
 void Main()
 {
-    ll n;
-    cin >> n;
-    ll k{n};
-    vi v(n);
-    for(auto&i:v)
-        cin >> i;
-    for (ll i{}; i <= n - 1; ++i)
-        computation[i][0] = v[i];
-    for (ll j{1}; j <= 20; j++)
-        for (ll i = 0; i + (1ll << j) < n + 1; i++)
-        {
-            ll f = computation[i][j - 1ll];
-            ll s = computation[i + (1ll << (j - 1))][j - 1];
-            computation[i][j] = f | s;
-        }
-    solver(v,k);
-    cout << k << endl;
+    // ll h, n;
+    // cin >> h >> n;
+    // vi a(n), c(n);
+    // cin >> a >> c;
+    // std::multiset<pi> m;
+    // for (int i{}; i < n; i++)
+    // {
+    //     m.insert({1ll, i});
+    // }
+    // ll ans{};
+    ll DFunc, l, r, k;
+    cin >> l >> r >> k;
+    for (ll i{}; i < 100; ++i)
+    {
+        DFunc = (i * k > 9) ? i : DFunc;
+        if (i * k > 9)break;
+    }
+    // (a^r-a^l) is ans
+    return void(cout << ((m + fastexpo(DFunc, r) - fastexpo(DFunc, l)) % m + m) % m << endl);
+    // while (h > 0)
+    // {
+    //     pi t = *m.begin();
+    //     ans = t.first;
+    //     h = h - a[t.second];
+    //     m.erase(m.begin());
+    //     m.insert({ans + c[t.second], t.second});
+    // }
+    // cout << ans << endl;
 }
 
 int32_t main()
