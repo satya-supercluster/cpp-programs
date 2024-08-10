@@ -3,17 +3,20 @@ using namespace std;
 #define int long long int
 #define endl "\n"
 const int testcases = 0;
-void dfs(int i, vector<vector<int>> &graph, vector<bool> &vis, vector<bool> &pVis,bool&cycle)
+void dfs(int i, vector<vector<int>> &graph, vector<bool> &vis, vector<bool> &pVis, bool &cycle)
 {
-    if(cycle)
+    if (cycle)
         return;
     vis[i] = true;
     pVis[i] = true;
-    for(auto&child:graph[i]){
-        if(vis[child]==false){
+    for (auto &child : graph[i])
+    {
+        if (vis[child] == false)
+        {
             dfs(child, graph, vis, pVis, cycle);
         }
-        else if(pVis[child]==true){
+        else if (pVis[child] == true)
+        {
             cycle = true;
             return;
         }
@@ -23,13 +26,13 @@ void dfs(int i, vector<vector<int>> &graph, vector<bool> &vis, vector<bool> &pVi
 void solve(vector<vector<int>> &graph)
 {
     int n = graph.size();
-    vector<bool> vis(n, false),pVis(n,false);
+    vector<bool> vis(n, false), pVis(n, false);
     bool cycle = false;
     for (int i{}; i < n; i++)
     {
         if (!vis[i])
         {
-            dfs(i, graph, vis,pVis,cycle);
+            dfs(i, graph, vis, pVis, cycle);
         }
         if (cycle)
         {

@@ -1,0 +1,2 @@
+Palindrome Length: 2
+Palindrome: ab

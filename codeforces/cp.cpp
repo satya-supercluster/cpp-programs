@@ -76,7 +76,8 @@ void Main()
     for (ll i{}; i < 100; ++i)
     {
         DFunc = (i * k > 9) ? i : DFunc;
-        if (i * k > 9)break;
+        if (i * k > 9)
+            break;
     }
     // (a^r-a^l) is ans
     return void(cout << ((m + fastexpo(DFunc, r) - fastexpo(DFunc, l)) % m + m) % m << endl);
