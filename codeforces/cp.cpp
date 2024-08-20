@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long int
+#define ll int
 #define endl "\n"
 const ll testcases = 1;
 using pi = pair<ll, ll>;
@@ -44,52 +44,43 @@ ostream &operator<<(ostream &out, vector<T> &a)
 #define LB(c, x) distance((c).begin(), lower_bound(all(c), (x)))
 #define UB(c, x) distance((c).begin(), upper_bound(all(c), (x)))
 #define UNIQUE(x) sort(all(x)), x.erase(unique(all(x)), x.end()), x.shrink_to_fit()
-ll m = (ll)1e9 + 7ll;
-ll fastexpo(ll a, ll b)
-{
-    a = (a + m) % m;
-    long long res = 1ll;
-    while (b)
-    {
-        if (b & 1ll)
-            res = (res * 1ll * a + m) % m;
-        b >>= 1ll;
-        a = (a * 1ll * a + m) % m;
-    }
-    return res;
-}
 
 void Main()
 {
-    // ll h, n;
-    // cin >> h >> n;
-    // vi a(n), c(n);
-    // cin >> a >> c;
-    // std::multiset<pi> m;
-    // for (int i{}; i < n; i++)
-    // {
-    //     m.insert({1ll, i});
-    // }
-    // ll ans{};
-    ll DFunc, l, r, k;
-    cin >> l >> r >> k;
-    for (ll i{}; i < 100; ++i)
+    int n;
+    cin >> n;
+    vector<pi> edges;
+    vi vis(n + 1, 0);
+    stack<pi> st;
+    for (int i = n; i >= 2; i--)
     {
-        DFunc = (i * k > 9) ? i : DFunc;
-        if (i * k > 9)
-            break;
+        st.push({1, i});
     }
-    // (a^r-a^l) is ans
-    return void(cout << ((m + fastexpo(DFunc, r) - fastexpo(DFunc, l)) % m + m) % m << endl);
-    // while (h > 0)
-    // {
-    //     pi t = *m.begin();
-    //     ans = t.first;
-    //     h = h - a[t.second];
-    //     m.erase(m.begin());
-    //     m.insert({ans + c[t.second], t.second});
-    // }
-    // cout << ans << endl;
+    while(edges.size()<n-1){
+        auto [x,y] = st.top();
+        st.pop();
+        if(!(vis[x] and vis[y])){
+            cout << "? " << x << " " << y << endl;
+            cout.flush();
+            int z;
+            cin >> z;
+            if(z==x){
+                edges.eb(x, y);
+                vis[x] = vis[y] = 1;
+            }
+            else{
+                st.push({x, z});
+                st.push({z, y});
+            }
+        }
+    }
+    cout << "! ";
+    for (auto &[i, j] : edges)
+    {
+        cout << i << " " << j << " ";
+    }
+    cout << endl;
+    cout.flush();
 }
 
 int32_t main()
