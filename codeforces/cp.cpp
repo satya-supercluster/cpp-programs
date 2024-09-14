@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define ll int
+#define ll long long int
 #define endl "\n"
-const ll testcases = 1;
+const ll testcases = 0;
 using pi = pair<ll, ll>;
 using vi = vector<ll>;
 template <class T>
@@ -17,22 +17,10 @@ template <typename T>
 T floor(T a, T b) { return a / b - (a % b && (a ^ b) < 0); }
 template <typename T>
 T ceil(T x, T y) { return floor(x + y - 1, y); }
-template <typename T>
-istream &operator>>(istream &cin, vector<T> &a)
-{
-    for (T &x : a)
-        cin >> x;
-    return cin;
-}
-template <typename T>
-ostream &operator<<(ostream &out, vector<T> &a)
-{
-    for (T &x : a)
-        out << x << " ";
-    return out;
-}
+template <typename T> istream &operator>>(istream &cin, vector<T> &a){ for (T &x : a) cin >> x; return cin; }
+template <typename T> ostream &operator<<(ostream &out, vector<T> &a) { for (T &x : a) out << x<<" "; return out; }
 #define FOR_subset(t, s) for (ll t = (s); t >= 0; t = (t == 0 ? -1 : (t - 1) & (s)))
-#define all(x) begin(x), end(x)
+#define all(x) begin(x),end(x)
 #define sz(x) ll(x.size())
 #define elif else if
 #define eb emplace_back
@@ -44,43 +32,43 @@ ostream &operator<<(ostream &out, vector<T> &a)
 #define LB(c, x) distance((c).begin(), lower_bound(all(c), (x)))
 #define UB(c, x) distance((c).begin(), upper_bound(all(c), (x)))
 #define UNIQUE(x) sort(all(x)), x.erase(unique(all(x)), x.end()), x.shrink_to_fit()
-
 void Main()
 {
-    int n;
-    cin >> n;
-    vector<pi> edges;
-    vi vis(n + 1, 0);
-    stack<pi> st;
-    for (int i = n; i >= 2; i--)
-    {
-        st.push({1, i});
-    }
-    while(edges.size()<n-1){
-        auto [x,y] = st.top();
-        st.pop();
-        if(!(vis[x] and vis[y])){
-            cout << "? " << x << " " << y << endl;
-            cout.flush();
-            int z;
-            cin >> z;
-            if(z==x){
-                edges.eb(x, y);
-                vis[x] = vis[y] = 1;
-            }
-            else{
-                st.push({x, z});
-                st.push({z, y});
-            }
+    int n ;
+    cin>>n;
+    vi v(n);
+    cin >> v;
+    vc<vi> dp(n, vi(4, 0));
+    dp[0][0] = 0;
+    dp[0][1] = v[0];
+    dp[0][2] = 0;
+    dp[0][3] = 0;
+    for (int i{1}; i < n;i++){
+        dp[i][0] = max({dp[i - 1][0], dp[i - 1][1], dp[i - 1][2]});
+        if (dp[i - 1][0] >= dp[i - 1][1] and dp[i - 1][0] >= dp[i - 1][2]){
+            dp[i][4] = 0;
         }
+        elif (dp[i - 1][1] >= dp[i - 1][0] and dp[i - 1][1] >= dp[i - 1][2])
+        {
+            dp[i][4] = 1;
+        }
+        elif (dp[i - 1][2] >= dp[i - 1][0] and dp[i - 1][2] >= dp[i - 1][1])
+        {
+            dp[i][4] = 2;
+        }
+        ll temp=dp[i-1][0],odd{},even{};
+        if(dp[i-1][4]==1){
+            odd = 0;
+            even = temp + 2ll * v[i];
+        }
+        else if(dp[i-1][4]==2){
+            even=0;
+            odd = temp + v[i];
+        }
+        dp[i][1] = max({odd, dp[i - 1][2] + v[i]});
+        dp[i][2] = max({even, dp[i - 1][1] + 2ll * v[i]});
     }
-    cout << "! ";
-    for (auto &[i, j] : edges)
-    {
-        cout << i << " " << j << " ";
-    }
-    cout << endl;
-    cout.flush();
+    cout << max({dp[n - 1][0], dp[n - 1][1], dp[n - 1][2]}) << endl;
 }
 
 int32_t main()
